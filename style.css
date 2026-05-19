@@ -448,10 +448,8 @@ h1, h2, h3 {
 .attire-img {
   display: block;
   width: 100%;
-  max-width: 720px;
-  height: 420px;
-  object-fit: cover;
-  object-position: center top;
+  max-width: 653px;
+  height: auto;
   border-radius: 6px;
   border: 2px solid var(--gold);
   margin: 0 auto 3rem;
