@@ -1,12 +1,12 @@
-// Countdown to wedding date
-const WEDDING_DATE = new Date('2026-01-24T16:00:00');
+// Countdown to wedding date: January 24, 2026 at 10:00 AM
+const WEDDING_DATE = new Date('2026-01-24T10:00:00');
 
 function updateCountdown() {
-  const now = new Date();
-  const diff = WEDDING_DATE - now;
+  const diff = WEDDING_DATE - new Date();
 
   if (diff <= 0) {
-    document.getElementById('countdown').innerHTML = '<p style="font-family:\'Cormorant Garamond\',serif;font-size:2rem;color:var(--blush)">Today is the day! ♡</p>';
+    document.getElementById('countdown').innerHTML =
+      '<p style="font-family:\'Cormorant Garamond\',serif;font-size:2rem;color:var(--blush)">Today is the day! ♡</p>';
     return;
   }
 
@@ -23,34 +23,3 @@ function updateCountdown() {
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
-
-// RSVP form
-function handleRsvp(e) {
-  e.preventDefault();
-  e.target.style.display = 'none';
-  document.getElementById('rsvp-confirm').style.display = 'block';
-}
-
-// Subtle scroll-in animation
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15 });
-
-document.querySelectorAll('.card, .timeline-item, .story-text, .story-image').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(24px)';
-  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-  observer.observe(el);
-});
-
-document.addEventListener('animationend', () => {});
-
-// IntersectionObserver visible class
-const styleTag = document.createElement('style');
-styleTag.textContent = '.visible { opacity: 1 !important; transform: none !important; }';
-document.head.appendChild(styleTag);
