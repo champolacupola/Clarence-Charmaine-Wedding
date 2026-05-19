@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clarence & Charmaine — We're Getting Married!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Together Forever</p>
+      <h1>Clarence <span>&amp;</span> Charmaine</h1>
+      <p class="hero-date">Saturday, the Twenty-Fourth of January, Two Thousand and Twenty-Six</p>
+      <a href="#details" class="btn">See Details</a>
+    </div>
+  </section>
+
+  <!-- Countdown -->
+  <section class="countdown-section">
+    <p class="section-label">Days Until We Say "I Do"</p>
+    <div class="countdown" id="countdown">
+      <div class="countdown-block"><span id="days">--</span><small>Days</small></div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-block"><span id="hours">--</span><small>Hours</small></div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-block"><span id="minutes">--</span><small>Minutes</small></div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-block"><span id="seconds">--</span><small>Seconds</small></div>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="story" id="story">
+    <div class="container two-col">
+      <div class="story-image">
+        <div class="image-placeholder">
+          <span>Our Photo</span>
+        </div>
+      </div>
+      <div class="story-text">
+        <p class="section-label">Our Story</p>
+        <h2>How It All Began</h2>
+        <p>Every great love story has a beginning — and ours started with a smile that we couldn't forget. From that first moment, we knew something special was unfolding.</p>
+        <p>Through laughter and adventures, quiet evenings and spontaneous getaways, we've built a life full of joy, and now we can't wait to make it official in front of all the people we love.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Details -->
+  <section class="details" id="details">
+    <p class="section-label">The Big Day</p>
+    <h2>Event Details</h2>
+    <div class="container cards">
+
+      <div class="card">
+        <div class="card-icon">&#9788;</div>
+        <h3>Ceremony</h3>
+        <p><strong>4:00 PM</strong></p>
+        <p>St. Mary's Chapel<br />123 Rose Garden Lane<br />Manila, Philippines</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">&#9829;</div>
+        <h3>Reception</h3>
+        <p><strong>6:30 PM</strong></p>
+        <p>The Grand Ballroom<br />456 Sunset Boulevard<br />Manila, Philippines</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">&#9740;</div>
+        <h3>Dress Code</h3>
+        <p><strong>Semi-Formal</strong></p>
+        <p>Soft pastels &amp; neutral tones are encouraged. Please avoid white.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="timeline-section">
+    <p class="section-label">Program</p>
+    <h2>Day-of Timeline</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-time">4:00 PM</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-desc">Wedding Ceremony</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">5:00 PM</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-desc">Cocktail Hour &amp; Photo Opportunities</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">6:30 PM</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-desc">Reception Doors Open</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">7:00 PM</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-desc">Dinner &amp; Toasts</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">8:30 PM</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-desc">First Dance &amp; Party</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">11:00 PM</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-desc">Send-Off</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="rsvp" id="rsvp">
+    <p class="section-label">Kindly Reply</p>
+    <h2>RSVP</h2>
+    <p class="rsvp-sub">Please respond by <strong>January 3, 2026</strong></p>
+    <form class="rsvp-form" onsubmit="handleRsvp(event)">
+      <div class="form-row">
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email Address" required />
+      </div>
+      <div class="form-row">
+        <input type="number" placeholder="Number of Guests" min="1" max="5" required />
+        <select required>
+          <option value="" disabled selected>Attendance</option>
+          <option value="yes">Joyfully Accepts</option>
+          <option value="no">Regretfully Declines</option>
+        </select>
+      </div>
+      <textarea placeholder="Dietary restrictions or message for the couple (optional)"></textarea>
+      <button type="submit" class="btn">Send RSVP</button>
+    </form>
+    <p class="rsvp-confirm" id="rsvp-confirm" style="display:none;">Thank you! We can't wait to celebrate with you. &#10084;</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Clarence &amp; Charmaine &mdash; January 24, 2026</p>
+    <p class="footer-sub">Made with love &hearts;</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
