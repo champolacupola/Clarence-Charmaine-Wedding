@@ -421,8 +421,6 @@ h1, h2, h3 {
 
 .attire-image-side {
   flex: 0 0 300px;
-  position: sticky;
-  top: 5rem;
 }
 
 .attire-img {
