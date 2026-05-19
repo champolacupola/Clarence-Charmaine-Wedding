@@ -23,3 +23,19 @@ function updateCountdown() {
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
+
+// Nav: scroll shadow + mobile hamburger
+const nav = document.getElementById('site-nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 10);
+});
+
+const toggle = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('nav-links');
+toggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => navLinks.classList.remove('open'));
+});
