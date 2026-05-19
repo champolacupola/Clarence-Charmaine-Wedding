@@ -1,5 +1,5 @@
-// Countdown to wedding date: January 24, 2026 at 10:00 AM
-const WEDDING_DATE = new Date('2026-01-24T10:00:00');
+// Countdown to wedding date: July 18, 2026 at 10:00 AM
+const WEDDING_DATE = new Date('2026-07-18T10:00:00');
 
 function updateCountdown() {
   const diff = WEDDING_DATE - new Date();
