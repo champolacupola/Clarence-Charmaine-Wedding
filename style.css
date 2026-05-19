@@ -2,13 +2,14 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --cream:      #f7f2e3;
-  --cream-deep: #ede8d5;
-  --gold:       #b8952a;
-  --gold-light: #d4af5a;
-  --gold-dark:  #8a6d1a;
-  --text:       #7a5c1e;
-  --text-soft:  #a08840;
+  --cream:      #fdf8ee;
+  --cream-deep: #f0e9d6;
+  --gold:       #c9a227;
+  --gold-light: #dbbe6a;
+  --gold-dark:  #4a3200;
+  --text:       #2c1a00;
+  --text-soft:  #6b4f1a;
+  --section-bg: #3d2800;
 }
 
 html { scroll-behavior: smooth; }
@@ -31,7 +32,7 @@ h1, h2, h3 {
   font-size: 0.68rem;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: var(--gold-light);
+  color: var(--gold);
   margin-bottom: 0.75rem;
 }
 
@@ -85,7 +86,7 @@ h1, h2, h3 {
   font-size: 0.68rem;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: var(--gold-light);
+  color: var(--gold);
   margin-bottom: 1.25rem;
 }
 
@@ -107,14 +108,15 @@ h1, h2, h3 {
   font-size: 0.85rem;
   letter-spacing: 0.25em;
   color: var(--text-soft);
+  font-weight: 400;
   margin-bottom: 0.5rem;
 }
 
 .hero-venue {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 1rem;
-  color: var(--text-soft);
+  font-size: 1.05rem;
+  color: var(--text);
   margin-bottom: 2rem;
 }
 
@@ -139,7 +141,7 @@ h1, h2, h3 {
 
 /* === Countdown === */
 .countdown-section {
-  background: var(--gold-dark);
+  background: var(--section-bg);
   color: var(--cream);
   text-align: center;
   padding: 4rem 2rem;
@@ -196,7 +198,7 @@ h1, h2, h3 {
 
 .details h2 {
   font-size: clamp(2rem, 4vw, 3rem);
-  color: var(--gold-dark);
+  color: var(--text);
   margin-bottom: 3rem;
 }
 
@@ -223,7 +225,7 @@ h1, h2, h3 {
 
 .card h3 {
   font-size: 1.5rem;
-  color: var(--gold-dark);
+  color: var(--text);
   margin-bottom: 0.4rem;
 }
 
@@ -231,11 +233,12 @@ h1, h2, h3 {
   font-size: 0.75rem;
   letter-spacing: 0.15em;
   color: var(--gold);
+  font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 0.75rem;
 }
 
-.card p { font-size: 0.92rem; line-height: 1.9; color: var(--text); }
+.card p { font-size: 0.95rem; line-height: 1.9; color: var(--text); }
 
 /* === Divider === */
 .divider-ornament {
@@ -256,7 +259,7 @@ h1, h2, h3 {
 
 .contact h2 {
   font-size: clamp(2rem, 4vw, 3rem);
-  color: var(--gold-dark);
+  color: var(--text);
   margin-bottom: 1.5rem;
 }
 
@@ -282,15 +285,15 @@ h1, h2, h3 {
 
 /* === Footer === */
 footer {
-  background: var(--gold-dark);
-  color: rgba(247,242,227,0.6);
+  background: var(--section-bg);
+  color: rgba(253,248,238,0.65);
   text-align: center;
   padding: 2.5rem 1rem;
   font-size: 0.85rem;
 }
 
 footer p + p { margin-top: 0.25rem; }
-.footer-sub { color: rgba(247,242,227,0.3); font-size: 0.75rem; }
+.footer-sub { color: rgba(253,248,238,0.3); font-size: 0.75rem; }
 
 /* === Responsive === */
 @media (max-width: 600px) {
