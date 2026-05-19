@@ -447,8 +447,7 @@ h1, h2, h3 {
 
 .attire-img {
   display: block;
-  width: 100%;
-  max-width: 653px;
+  width: 320px;
   height: auto;
   border-radius: 6px;
   border: 2px solid var(--gold);
