@@ -132,15 +132,16 @@ h1, h2, h3 {
 /* Corner floral decorations */
 .hero::before,
 .hero::after {
-  content: '✿';
+  content: '❁ ✾ ❀';
   position: absolute;
-  font-size: 3rem;
+  font-size: 1.6rem;
   color: var(--gold-light);
-  opacity: 0.5;
+  opacity: 0.55;
   line-height: 1;
+  letter-spacing: 0.4em;
 }
-.hero::before { top: 2.5rem; left: 3rem; }
-.hero::after  { bottom: 2.5rem; right: 3rem; }
+.hero::before { top: 2rem; left: 2.5rem; }
+.hero::after  { bottom: 2rem; right: 2.5rem; }
 
 .hero-inner {
   border: 1px solid var(--gold-light);
@@ -150,17 +151,32 @@ h1, h2, h3 {
   position: relative;
 }
 
-/* Inner corner accents */
-.hero-inner::before,
-.hero-inner::after {
-  content: '✿';
+/* Inner corner accents via spans */
+.hc {
   position: absolute;
-  font-size: 1.6rem;
+  font-size: 1.1rem;
   color: var(--gold-light);
-  opacity: 0.7;
+  opacity: 0.85;
+  line-height: 1;
+  pointer-events: none;
 }
-.hero-inner::before { top: -0.9rem; right: 1.5rem; }
-.hero-inner::after  { bottom: -0.9rem; left: 1.5rem; }
+.hc::before, .hc::after { display: block; line-height: 1.1; }
+
+.hc-tl { top: 0.7rem; left: 0.9rem; text-align: left; }
+.hc-tl::before { content: '❁'; }
+.hc-tl::after  { content: '✾'; margin-left: 0.3rem; }
+
+.hc-tr { top: 0.7rem; right: 0.9rem; text-align: right; }
+.hc-tr::before { content: '❁'; }
+.hc-tr::after  { content: '✾'; margin-right: 0.3rem; }
+
+.hc-bl { bottom: 0.7rem; left: 0.9rem; text-align: left; }
+.hc-bl::before { content: '✾'; }
+.hc-bl::after  { content: '❁'; margin-left: 0.3rem; }
+
+.hc-br { bottom: 0.7rem; right: 0.9rem; text-align: right; }
+.hc-br::before { content: '✾'; }
+.hc-br::after  { content: '❁'; margin-right: 0.3rem; }
 
 .hero-eyebrow {
   font-family: 'Lato', sans-serif;
@@ -294,10 +310,24 @@ h1, h2, h3 {
   text-align: center;
 }
 
-.details h2 {
+.details h2,
+.attire h2,
+.contact h2 {
   font-size: clamp(2rem, 4vw, 3rem);
   color: var(--text);
-  margin-bottom: 3rem;
+  margin-bottom: 0.6rem;
+}
+
+.details h2::after,
+.attire h2::after,
+.contact h2::after {
+  content: '❁ ✦ ❁';
+  display: block;
+  font-size: 0.85rem;
+  color: var(--gold-light);
+  letter-spacing: 0.5em;
+  margin-top: 0.6rem;
+  margin-bottom: 2.4rem;
 }
 
 .cards {
@@ -340,12 +370,39 @@ h1, h2, h3 {
 
 /* === Divider === */
 .divider-ornament {
-  text-align: center;
-  padding: 2rem;
-  color: var(--gold-light);
-  font-size: 1.2rem;
-  letter-spacing: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 2.5rem 3rem;
   background: var(--cream);
+  color: var(--gold-light);
+}
+
+.divider-ornament::before,
+.divider-ornament::after {
+  content: '';
+  flex: 1;
+  max-width: 160px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-light));
+}
+
+.divider-ornament::after {
+  background: linear-gradient(to left, transparent, var(--gold-light));
+}
+
+.divider-ornament span {
+  font-size: 1rem;
+  line-height: 1;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.divider-ornament span:nth-child(3) {
+  font-size: 1.3rem;
+  opacity: 1;
+  color: var(--gold);
 }
 
 /* === Attire === */
@@ -355,11 +412,6 @@ h1, h2, h3 {
   text-align: center;
 }
 
-.attire h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: var(--text);
-  margin-bottom: 0.5rem;
-}
 
 .attire-sub {
   font-size: 0.75rem;
@@ -460,11 +512,6 @@ h1, h2, h3 {
   text-align: center;
 }
 
-.contact h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: var(--text);
-  margin-bottom: 1.5rem;
-}
 
 .contact-numbers {
   display: flex;
