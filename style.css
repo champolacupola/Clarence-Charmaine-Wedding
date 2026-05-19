@@ -330,7 +330,7 @@ h1, h2, h3 {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--cream);
-  background: #4a7c59;
+  background: var(--gold);
   padding: 0.2rem 0.65rem;
   margin-bottom: 0.35rem;
 }
