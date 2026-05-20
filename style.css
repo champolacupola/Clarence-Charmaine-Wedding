@@ -412,13 +412,17 @@ h1, h2, h3 {
   text-align: center;
 }
 
+.attire-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
 .attire-layout {
   display: flex;
   align-items: flex-start;
   gap: 3.5rem;
   max-width: 1100px;
   margin: 0 auto;
-  text-align: left;
 }
 
 .attire-image-side {
