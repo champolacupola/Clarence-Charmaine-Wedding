@@ -441,6 +441,14 @@ h1, h2, h3 {
   flex: 1;
 }
 
+.attire-content-side .color-swatches {
+  justify-content: flex-start;
+}
+
+.attire-content-side .swatch-label {
+  text-align: left;
+}
+
 .attire-content-side .attire-cols {
   max-width: 100%;
   margin-left: 0;
