@@ -39,3 +39,24 @@ toggle.addEventListener('click', () => {
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => navLinks.classList.remove('open'));
 });
+
+// Gallery strip arrows
+const strip = document.getElementById('gallery-strip');
+const prevBtn = document.getElementById('gallery-prev');
+const nextBtn = document.getElementById('gallery-next');
+
+function updateArrows() {
+  prevBtn.classList.toggle('hidden', strip.scrollLeft <= 0);
+  nextBtn.classList.toggle('hidden', strip.scrollLeft + strip.clientWidth >= strip.scrollWidth - 1);
+}
+
+prevBtn.addEventListener('click', () => {
+  strip.scrollBy({ left: -strip.clientWidth * 0.8, behavior: 'smooth' });
+});
+
+nextBtn.addEventListener('click', () => {
+  strip.scrollBy({ left: strip.clientWidth * 0.8, behavior: 'smooth' });
+});
+
+strip.addEventListener('scroll', updateArrows);
+updateArrows();
